@@ -4,12 +4,13 @@ import lexical_analysis.lexer.Core;
 import lexical_analysis.token.type.LexType;
 import lexical_analysis.util.chain.HandlerChain;
 import lexical_analysis.util.chain.lexType.handler.annotation.ExcludeAutoSelfState;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.IndexedColors;
 
 abstract public class LexTypeHandler implements HandlerChain {
     private Core.IState selfState;
     private LexTypeHandler nextHandler;
-//    private String name;
-
+    private IndexedColors color;
 
     public LexTypeHandler() {
     }

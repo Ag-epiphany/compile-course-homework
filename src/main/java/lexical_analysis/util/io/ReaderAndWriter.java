@@ -1,16 +1,24 @@
 package lexical_analysis.util.io;
 
 import Constant.ProjectConstant;
+import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.util.ListUtils;
+import lexical_analysis.token.Token;
+import lexical_analysis.token.type.DataType;
 import lexical_analysis.util.chain.charType.handler.CharType;
 import lexical_analysis.util.chain.charType.util.CharTypeUtil;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 // todo 重构write()，使其能将文件写入.xlsx
 public class ReaderAndWriter {
+    private String sourceFileName;
     private BufferedReader sourceFile;
     private BufferedWriter targetFile;
+//    private RowColorCellWriteHandler rowColorCellWriteHandler;
 
     private int lineNumber;
     private String currentLine;
@@ -33,8 +41,10 @@ public class ReaderAndWriter {
 
     public ReaderAndWriter(String sourceFile, String targetFile) {
         try {
+            this.sourceFileName = sourceFile.substring(sourceFile.lastIndexOf('\\') + 1, sourceFile.lastIndexOf('.'));
             this.sourceFile = new BufferedReader(new FileReader(sourceFile));
             this.targetFile = new BufferedWriter(new FileWriter(targetFile));
+//            this.rowColorCellWriteHandler = new RowColorCellWriteHandler();
             this.lineNumber = 0;
             this.hasNewLine = false;
             this.tmpChar = '\0';
@@ -106,9 +116,18 @@ public class ReaderAndWriter {
         }
     }
 
+    public void write(List<Token> tokenList) {
+        write(tokenList, ProjectConstant.DEFAULT_TOKEN_EXCEL_FILEPATH);
+    }
+
+    public void write(List<Token> tokenList, String targetFilePath) {
+        EasyExcel.write(targetFilePath, Token.class).sheet(sourceFileName).doWrite(tokenList);
+    }
+
     public void setSourceFile(String filePath) {
         try {
             this.sourceFile = new BufferedReader(new FileReader(filePath));
+            this.sourceFileName = filePath.substring(filePath.lastIndexOf('\\') + 1, filePath.lastIndexOf('.'));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

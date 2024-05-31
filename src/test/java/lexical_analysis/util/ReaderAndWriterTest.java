@@ -1,8 +1,13 @@
 package lexical_analysis.util;
 
+import com.alibaba.excel.util.ListUtils;
+import lexical_analysis.token.Token;
+import lexical_analysis.token.type.DataType;
 import lexical_analysis.util.io.ReaderAndWriter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 public class ReaderAndWriterTest {
     @Test
@@ -16,6 +21,15 @@ public class ReaderAndWriterTest {
             }
             word = readerAndWriter.read();
         }
+    }
+
+    @Test
+    public void testWrite() {
+        ReaderAndWriter readerAndWriter = new ReaderAndWriter();
+        List<Token> list = ListUtils.newArrayList();
+        list.add(new Token(1, DataType.INTEGER, "整数"));
+        System.out.println(list);
+        readerAndWriter.write(list);
     }
 
     @Test

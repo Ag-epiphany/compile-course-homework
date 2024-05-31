@@ -8,6 +8,7 @@ import lexical_analysis.util.chain.charType.util.CharTypeUtil;
 import lexical_analysis.util.chain.lexType.handler.EmbededLexTypeHandler;
 import lexical_analysis.util.chain.lexType.handler.util.StateHandlerChainInitializer;
 import lexical_analysis.util.io.ReaderAndWriter;
+import org.apache.poi.ss.usermodel.IndexedColors;
 
 import java.io.*;
 import java.lang.annotation.*;
@@ -249,8 +250,15 @@ public class Core {
             tokenList.add(token);
 //            System.out.println(token);
         }
-
         return tokenList;
+    }
+
+    public void write(List<Token> tokenList) {
+        write(tokenList, ProjectConstant.DEFAULT_TOKEN_EXCEL_FILEPATH);
+    }
+
+    public void write(List<Token> tokenList, String targetFilePath) {
+        readerAndWriter.write(tokenList, targetFilePath);
     }
 
     private char getNextChar() {

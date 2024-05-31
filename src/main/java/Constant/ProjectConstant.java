@@ -9,4 +9,5 @@ public class ProjectConstant {
             "util.chain.lexType.handler.impl.";
 
     public static final String ESCAPED_SPACE = "空格";
+    public static final String DEFAULT_TOKEN_EXCEL_FILEPATH = "src\\main\\resources\\default\\defaultToken.xlsx";
 }
