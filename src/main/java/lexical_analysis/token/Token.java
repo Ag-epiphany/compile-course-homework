@@ -60,5 +60,3 @@ public class Token {
                 .toString();
     }
 }
-
-// todo 编写Token包装器：等间距的Token，以及 颜色高亮的Token

@@ -9,11 +9,8 @@ import lexical_analysis.util.chain.charType.handler.CharType;
 import lexical_analysis.util.chain.charType.util.CharTypeUtil;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
-
-// todo 重构write()，使其能将文件写入.xlsx
 public class ReaderAndWriter {
     private String sourceFileName;
     private BufferedReader sourceFile;
