@@ -1,10 +1,8 @@
 package lexical_analysis.util.io;
 
-import Constant.ProjectConstant;
+import constant.ProjectConstant;
 import com.alibaba.excel.EasyExcel;
-import com.alibaba.excel.util.ListUtils;
 import lexical_analysis.token.Token;
-import lexical_analysis.token.type.DataType;
 import lexical_analysis.util.chain.charType.handler.CharType;
 import lexical_analysis.util.chain.charType.util.CharTypeUtil;
 

@@ -1,6 +1,6 @@
 package lexical_analysis.util.chain.lexType.handler.util;
 
-import Constant.ProjectConstant;
+import constant.ProjectConstant;
 import lexical_analysis.util.chain.lexType.handler.EmbededLexTypeHandler;
 import lexical_analysis.util.chain.lexType.handler.LexTypeHandler;
 

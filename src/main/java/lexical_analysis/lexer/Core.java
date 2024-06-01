@@ -1,6 +1,6 @@
 package lexical_analysis.lexer;
 
-import Constant.ProjectConstant;
+import constant.ProjectConstant;
 import lexical_analysis.token.Token;
 import lexical_analysis.token.type.LexType;
 import lexical_analysis.util.chain.charType.handler.CharType;
@@ -8,7 +8,6 @@ import lexical_analysis.util.chain.charType.util.CharTypeUtil;
 import lexical_analysis.util.chain.lexType.handler.EmbededLexTypeHandler;
 import lexical_analysis.util.chain.lexType.handler.util.StateHandlerChainInitializer;
 import lexical_analysis.util.io.ReaderAndWriter;
-import org.apache.poi.ss.usermodel.IndexedColors;
 
 import java.io.*;
 import java.lang.annotation.*;

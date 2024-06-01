@@ -1,6 +1,6 @@
 package lexical_analysis.lexer;
 
-import Constant.ProjectConstant;
+import constant.ProjectConstant;
 import lexical_analysis.token.Token;
 
 import java.io.File;
