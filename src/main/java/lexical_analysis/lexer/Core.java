@@ -74,7 +74,7 @@ public class Core {
 
         @TransitionState(
                 chars = {CharType.EQUAL, CharType.EMPTY},
-                nextStates = {INASSIGN, INASSIGN}
+                nextStates = {INASSIGN, PRE_INASSIGN}
         )
         String pre_inassign;
 
