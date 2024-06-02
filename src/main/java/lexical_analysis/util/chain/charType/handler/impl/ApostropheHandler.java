@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class ApostropheHandler extends CharTypeHandler {
     public ApostropheHandler() {
-        init(CharType.APOSTROPHE, new OtherHandler());
+        init(CharType.APOSTROPHE);
     }
 
     @Override

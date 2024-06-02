@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class LetterHandler extends CharTypeHandler {
     public LetterHandler() {
-        init(CharType.LETTER,new DigitHandler());
+        init(CharType.LETTER);
     }
 
     @Override

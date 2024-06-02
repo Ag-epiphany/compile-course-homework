@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class DotHandler extends CharTypeHandler {
     public DotHandler() {
-        init(CharType.DOT,new CommaHandler());
+        init(CharType.DOT);
     }
 
     @Override

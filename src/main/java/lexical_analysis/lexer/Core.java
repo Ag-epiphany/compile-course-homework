@@ -5,8 +5,7 @@ import lexical_analysis.token.Token;
 import lexical_analysis.token.type.LexType;
 import lexical_analysis.util.chain.charType.handler.CharType;
 import lexical_analysis.util.chain.charType.util.CharTypeUtil;
-import lexical_analysis.util.chain.lexType.handler.EmbededLexTypeHandler;
-import lexical_analysis.util.chain.lexType.handler.util.StateHandlerChainInitializer;
+import lexical_analysis.util.chain.lexType.util.LexTypeUtil;
 import lexical_analysis.util.io.ReaderAndWriter;
 
 import java.io.*;
@@ -41,7 +40,7 @@ public class Core {
     }
 
 
-    private class StateConfig {
+    private static class StateConfig {
         @TransitionState(
                 chars = {CharType.LETTER, CharType.DIGIT, CharType.PLUS, CharType.SUBTRACTION,
                         CharType.MULTIPLICATION, CharType.DIVISION, CharType.L_PARENTHESIS, CharType.R_PARENTHESIS,
@@ -218,9 +217,7 @@ public class Core {
     }
 
     public List<Token> analyzeAndGenerateTokenList() {
-//        todo 重构初始化部分，隐藏EmbededLexTypeHandler，包装成一个工具类
 //        todo 编写CharTypeHandler初始化器
-        EmbededLexTypeHandler handlerChain = StateHandlerChainInitializer.initialize();
         List<Token> tokenList = new ArrayList<>();
         char ch = getNextChar();
         CharType charType = CharTypeUtil.parseCharType(ch);
@@ -232,7 +229,7 @@ public class Core {
 //            System.out.println(charType);
             currentState = currentState.transitionState(charType, stateTransitionTable);
 
-            Token token = tryGetToken(sb, currentState, handlerChain);
+            Token token = tryGetToken(sb, currentState);
             if (token != null) {
                 tokenList.add(token);
                 currentState = START;
@@ -244,7 +241,7 @@ public class Core {
         }
 
         currentState = currentState.transitionState(charType, stateTransitionTable);
-        Token token = tryGetToken(sb, currentState, handlerChain);
+        Token token = tryGetToken(sb, currentState);
         if (token != null) {
             tokenList.add(token);
 //            System.out.println(token);
@@ -298,10 +295,10 @@ public class Core {
         }
     }
 
-    private Token tryGetToken(StringBuilder sb, IState currentState, EmbededLexTypeHandler handlerChain) {
+    private Token tryGetToken(StringBuilder sb, IState currentState) {
         if (currentState.isTerminalState()) {
             String sbString = sb.toString().replace("\0", "");
-            LexType lexType = handlerChain.getLexTypeByState(currentState, sbString);
+            LexType lexType = LexTypeUtil.parseLexType(currentState, sbString);
             Token token = new Token(readerAndWriter.getLineNumber(), lexType, sbString);
             sb.setLength(0);
             return token;

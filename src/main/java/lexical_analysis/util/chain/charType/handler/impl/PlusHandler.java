@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class PlusHandler extends CharTypeHandler {
     public PlusHandler() {
-        init(CharType.PLUS, new SubtractionHandler());
+        init(CharType.PLUS);
     }
 
     @Override

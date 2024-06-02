@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class ColonHandler extends CharTypeHandler {
     public ColonHandler() {
-        init(CharType.COLON,new EqualHandler());
+        init(CharType.COLON);
     }
 
     @Override

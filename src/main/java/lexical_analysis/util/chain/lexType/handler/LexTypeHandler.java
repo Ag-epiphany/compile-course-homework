@@ -4,13 +4,11 @@ import lexical_analysis.lexer.Core;
 import lexical_analysis.token.type.LexType;
 import lexical_analysis.util.chain.HandlerChain;
 import lexical_analysis.util.chain.lexType.handler.annotation.ExcludeAutoSelfState;
-import org.apache.poi.ss.usermodel.FillPatternType;
-import org.apache.poi.ss.usermodel.IndexedColors;
 
 abstract public class LexTypeHandler implements HandlerChain {
     private Core.IState selfState;
     private LexTypeHandler nextHandler;
-    private IndexedColors color;
+//    private IndexedColors color;
 
     public LexTypeHandler() {
     }
@@ -45,6 +43,11 @@ abstract public class LexTypeHandler implements HandlerChain {
         return nextHandler != null ? nextHandler.getLexTypeByState(ctxState, name) : null;
     }
 
+    @Override
+    public void setNextHandler(HandlerChain handlerChain){
+        this.nextHandler = (LexTypeHandler) handlerChain;
+    }
+
     protected void initSelfState(Core.IState ctxState) {
         String selfClassName = this.getClass().getSimpleName();
         String selfStateName = selfClassName.substring(0, selfClassName.length() - 7);
@@ -59,10 +62,6 @@ abstract public class LexTypeHandler implements HandlerChain {
 
         selfStateName = tmp.toString().toUpperCase();
         setSelfState(ctxState.valueOf0(selfStateName));
-    }
-
-    public void setNextHandler(LexTypeHandler nextHandler) {
-        this.nextHandler = nextHandler;
     }
 
     abstract protected LexType convertLexType(String name);

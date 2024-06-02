@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class SubtractionHandler extends CharTypeHandler {
     public SubtractionHandler() {
-        init(CharType.SUBTRACTION,new MultiplicationHandler());
+        init(CharType.SUBTRACTION);
     }
 
     @Override

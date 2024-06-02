@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class DigitHandler extends CharTypeHandler {
     public DigitHandler() {
-        init(CharType.DIGIT,new PlusHandler());
+        init(CharType.DIGIT);
     }
 
     @Override

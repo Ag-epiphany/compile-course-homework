@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class RparenthesisHandler extends CharTypeHandler {
     public RparenthesisHandler() {
-        init(CharType.R_PARENTHESIS, new LMidParenthesis());
+        init(CharType.R_PARENTHESIS);
     }
 
     @Override

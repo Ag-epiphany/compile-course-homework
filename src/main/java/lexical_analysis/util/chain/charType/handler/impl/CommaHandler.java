@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class CommaHandler extends CharTypeHandler {
     public CommaHandler() {
-        init(CharType.COMMA,new ApostropheHandler());
+        init(CharType.COMMA);
     }
 
     @Override

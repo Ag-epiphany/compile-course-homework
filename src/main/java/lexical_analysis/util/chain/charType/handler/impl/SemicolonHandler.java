@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class SemicolonHandler extends CharTypeHandler {
     public SemicolonHandler() {
-        init(CharType.SEMICOLON, new ColonHandler());
+        init(CharType.SEMICOLON);
     }
 
     @Override

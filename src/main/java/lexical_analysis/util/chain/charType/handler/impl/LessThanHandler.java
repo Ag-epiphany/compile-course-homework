@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class LessThanHandler extends CharTypeHandler {
     public LessThanHandler() {
-        init(CharType.LESS_THAN,new WhiteSpaceHandler());
+        init(CharType.LESS_THAN);
     }
 
     @Override

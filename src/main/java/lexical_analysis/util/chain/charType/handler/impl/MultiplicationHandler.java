@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class MultiplicationHandler extends CharTypeHandler {
     public MultiplicationHandler() {
-        init(CharType.MULTIPLICATION, new DivisionHandler());
+        init(CharType.MULTIPLICATION);
     }
 
     @Override

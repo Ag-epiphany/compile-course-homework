@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class WhiteSpaceHandler extends CharTypeHandler {
     public WhiteSpaceHandler() {
-        init(CharType.WHITE_SPACE,new EofHandler());
+        init(CharType.WHITE_SPACE);
     }
 
     @Override

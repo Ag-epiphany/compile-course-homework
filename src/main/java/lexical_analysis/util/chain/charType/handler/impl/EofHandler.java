@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class EofHandler extends CharTypeHandler {
     public EofHandler() {
-        init(CharType.EOF, new EmptyHandler());
+        init(CharType.EOF);
     }
 
     @Override

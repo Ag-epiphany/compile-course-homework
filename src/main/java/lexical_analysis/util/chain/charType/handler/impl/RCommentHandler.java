@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class RCommentHandler extends CharTypeHandler {
     public RCommentHandler() {
-        init(CharType.RCOMMENT,new DotHandler());
+        init(CharType.RCOMMENT);
     }
 
     @Override

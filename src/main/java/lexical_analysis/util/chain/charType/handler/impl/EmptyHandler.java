@@ -5,7 +5,7 @@ import lexical_analysis.util.chain.charType.handler.CharTypeHandler;
 
 public class EmptyHandler extends CharTypeHandler {
     public EmptyHandler() {
-        init(CharType.EMPTY, new LetterHandler());
+        init(CharType.EMPTY);
     }
 
     @Override
