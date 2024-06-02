@@ -5,6 +5,7 @@ import com.alibaba.excel.EasyExcel;
 import lexical_analysis.token.Token;
 import lexical_analysis.util.chain.charType.handler.CharType;
 import lexical_analysis.util.chain.charType.util.CharTypeUtil;
+import lombok.Getter;
 
 import java.io.*;
 import java.util.List;
@@ -15,6 +16,7 @@ public class ReaderAndWriter {
     private BufferedWriter targetFile;
 //    private RowColorCellWriteHandler rowColorCellWriteHandler;
 
+    @Getter
     private int lineNumber;
     private String currentLine;
     private int pos;
@@ -97,10 +99,6 @@ public class ReaderAndWriter {
         }
 
         return (char) -1;
-    }
-
-    public int getLineNumber() {
-        return this.lineNumber;
     }
 
     public void write(String content) {

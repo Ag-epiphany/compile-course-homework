@@ -3,9 +3,11 @@ package lexical_analysis.token.type;
 public enum WhiteSpace implements SingleCharDelimiter {
     SPACE(" "),
     NEW_LINE("\n"),
+    TAB("\t"),
+    CARRIAGE_RETURN("\r")
     ;
 
-    private String symbol;
+    private final String symbol;
 
     WhiteSpace(String symbol) {
         this.symbol = symbol;

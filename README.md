@@ -21,9 +21,10 @@
 Lexer lexer = new Lexer();    //	获取Lexer
 
 String srcFilePath = "源文件路径";
-List<Token> tokenList = lexer.generateTokenList(srcFilePath);    //	获取srcFile的Token序列
+List<Token> tokenList = lexer.generateTokenList(srcFilePath);  // 获取srcFile的原始Token序列
+List<Token> filteredTokenList=lexer.filter(tokenList,token->true) //实现自定义过滤器过滤Token序列，lexer内置提供了默认的过滤器，将注释和空白符类型token过滤掉
 
-String targetPath = "存储Token序列的文件路径（目前仅支持.xls，.xlsx）";
+String targetPath = "存储Token序列的文件路径（目前仅支持.xlsx）";
 lexer.write(tokenList, targetPath);    //	持久化解析出来的Token序列
 ```
 

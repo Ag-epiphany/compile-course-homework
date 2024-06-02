@@ -18,6 +18,16 @@ public class LexerTest {
     }
 
     @Test
+    public void testCoreFilter() {
+        Lexer lexer = new Lexer();
+        lexer.generateTokenList(ProjectConstant.DEFAULT_SOURCE_fILEPATH);
+        List<Token> tokenList = lexer.filter();
+        for (Token token : tokenList) {
+            System.out.println(token);
+        }
+    }
+
+    @Test
     public void testWrite() {
         Lexer lexer = new Lexer();
         List<Token> tokenList = lexer.generateTokenList(ProjectConstant.DEFAULT_SOURCE_fILEPATH);
