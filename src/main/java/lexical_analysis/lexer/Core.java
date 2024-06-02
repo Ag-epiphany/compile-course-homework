@@ -217,7 +217,6 @@ public class Core {
     }
 
     public List<Token> analyzeAndGenerateTokenList() {
-//        todo 编写CharTypeHandler初始化器
         List<Token> tokenList = new ArrayList<>();
         char ch = getNextChar();
         CharType charType = CharTypeUtil.parseCharType(ch);
