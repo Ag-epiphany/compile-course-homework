@@ -1,5 +1,6 @@
 package lexical_analysis.token;
 
+import com.alibaba.excel.annotation.write.style.ContentFontStyle;
 import constant.ProjectConstant;
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.annotation.write.style.ContentStyle;
@@ -11,11 +12,13 @@ import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.text.StringEscapeUtils;
 
+import java.awt.*;
+
 @Getter
 @Setter
 @EqualsAndHashCode
 @HeadFontStyle(fontHeightInPoints = 20)
-@ContentStyle
+@ContentFontStyle(fontHeightInPoints = 10)
 public class Token {
     @ExcelProperty("行号")
     int lineShow;   //  单词在源程序中的行数，从1开始计数

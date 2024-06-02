@@ -3,6 +3,7 @@ package lexical_analysis.util.io;
 import constant.ProjectConstant;
 import com.alibaba.excel.EasyExcel;
 import lexical_analysis.token.Token;
+import lexical_analysis.token.util.TokenColorRowWriteHandler;
 import lexical_analysis.util.chain.charType.handler.CharType;
 import lexical_analysis.util.chain.charType.util.CharTypeUtil;
 import lombok.Getter;
@@ -114,7 +115,10 @@ public class ReaderAndWriter {
     }
 
     public void write(List<Token> tokenList, String targetFilePath) {
-        EasyExcel.write(targetFilePath, Token.class).sheet(sourceFileName).doWrite(tokenList);
+        EasyExcel.write(targetFilePath, Token.class)
+                .registerWriteHandler(new TokenColorRowWriteHandler())
+                .sheet(sourceFileName)
+                .doWrite(tokenList);
     }
 
     public void setSourceFile(String filePath) {

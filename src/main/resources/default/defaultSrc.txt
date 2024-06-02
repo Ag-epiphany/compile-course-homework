@@ -7,5 +7,5 @@ begin
     read(v1);
     v1 := v1 + 10;
     {write('a'')}
-    write(v1)
+    write(v1);
 end.
