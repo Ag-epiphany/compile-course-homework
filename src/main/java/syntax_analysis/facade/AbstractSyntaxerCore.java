@@ -15,4 +15,6 @@ abstract public class AbstractSyntaxerCore {
     abstract public void read(List<Token> tokenList);
 
     abstract public void analyze();
+
+    abstract public boolean hasError();
 }

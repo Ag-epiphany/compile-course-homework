@@ -14,4 +14,6 @@ abstract public class AbstractSyntaxerImpl {
     abstract public void writeSyntaxTreeText(File targetFile);  //  持久化文本语法树
 
     abstract public void writeSyntaxTreeGraph(File tagetFile);  //  持久化图形语法树
+
+    abstract public boolean hasError();
 }

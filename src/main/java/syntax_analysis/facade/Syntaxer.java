@@ -5,6 +5,7 @@ import lexical_analysis.token.Token;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import syntax_analysis.config.SyntaxerConfig;
 
 import java.io.File;
 import java.util.List;
@@ -15,6 +16,11 @@ import java.util.List;
 public class Syntaxer {
     protected AbstractSyntaxerCore core;
     protected AbstractSyntaxerImpl syntaxerImpl;
+
+    public Syntaxer(SyntaxerConfig config) {
+        this.core = config.getCore();
+        this.syntaxerImpl = config.getSyntaxerImpl();
+    }
 
     /*语法分析*/
     public Syntaxer analyze(List<Token> tokenList) {
@@ -61,5 +67,14 @@ public class Syntaxer {
     public Syntaxer writeSyntaxTreeGraph(File targetFile) {
         syntaxerImpl.writeSyntaxTreeGraph(targetFile);
         return this;
+    }
+
+    public boolean hasError() {
+        return syntaxerImpl.hasError();
+    }
+
+    public void filp(SyntaxerConfig config) {
+        setCore(config.getCore());
+        setSyntaxerImpl(config.getSyntaxerImpl());
     }
 }
