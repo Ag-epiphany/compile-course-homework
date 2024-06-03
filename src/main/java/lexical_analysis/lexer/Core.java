@@ -101,7 +101,7 @@ public class Core {
                         CharType.L_MID_PARENTHESIS, CharType.R_MID_PARENTHESIS, CharType.SEMICOLON, CharType.COLON,
                         CharType.EQUAL, CharType.LESS_THAN, CharType.LCOMMENT, CharType.RCOMMENT,
                         CharType.COMMA, CharType.APOSTROPHE},
-                nextStates = {INRANGE, PROGRAMME_DONE, PROGRAMME_DONE, PROGRAMME_DONE,
+                nextStates = {INRANGE, PROGRAMME_DONE, INDOT, PROGRAMME_DONE,
                         PROGRAMME_DONE, PROGRAMME_DONE, PROGRAMME_DONE, PROGRAMME_DONE,
                         PROGRAMME_DONE, PROGRAMME_DONE, PROGRAMME_DONE, PROGRAMME_DONE,
                         PROGRAMME_DONE, PROGRAMME_DONE, PROGRAMME_DONE, PROGRAMME_DONE,
