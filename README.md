@@ -32,7 +32,7 @@ lexer.write(tokenList, targetPath);    //	持久化解析出来的Token序列
 
 ## 2. 项目架构
 
-![SNL架构.drawio](https://raw.githubusercontent.com/Ag-epiphany/typora_Pictures/main/SNL架构.drawio.png)
+![SNL架构.drawio](C:/Users/19747/Desktop/SNL%E6%9E%B6%E6%9E%84.drawio.png)
 
 ### 2.1 词法分析器
 

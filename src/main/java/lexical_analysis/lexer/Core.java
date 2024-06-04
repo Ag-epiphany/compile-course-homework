@@ -225,14 +225,12 @@ public class Core {
         while (charType != CharType.EOF) {
 //            转移状态
             sb.append(ch);
-//            System.out.println(charType);
             currentState = currentState.transitionState(charType, stateTransitionTable);
 
             Token token = tryGetToken(sb, currentState);
             if (token != null) {
                 tokenList.add(token);
                 currentState = START;
-//                System.out.println(token);
             }
 
             ch = getNextChar();
@@ -243,7 +241,6 @@ public class Core {
         Token token = tryGetToken(sb, currentState);
         if (token != null) {
             tokenList.add(token);
-//            System.out.println(token);
         }
         return tokenList;
     }

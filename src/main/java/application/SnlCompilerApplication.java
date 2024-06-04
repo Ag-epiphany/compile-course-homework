@@ -8,7 +8,6 @@ import java.io.File;
 
 // 三个参数 [源文件] [输出目录] [语法分析器模式]
 public class SnlCompilerApplication {
-
     public static void main(String @NotNull [] args) {
         StringBuilder errorInfo = new StringBuilder();
         boolean isVarCntTrue = true;
