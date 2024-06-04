@@ -8,9 +8,10 @@ import java.util.List;
 import static syntax_analysis.ll1.ll1.doLL1;
 
 public class CoreAdapter extends AbstractSyntaxerCore {
+    private static List<Token> tokenlist;
     @Override
     public void read(List<Token> tokenList) {
-
+        tokenlist = tokenList;
     }
 
     @Override
@@ -26,5 +27,9 @@ public class CoreAdapter extends AbstractSyntaxerCore {
         return errorList.isEmpty();
     }
 
+    public List<Token> getTokenList() {
+
+        return tokenlist;
+    }
 
 }
