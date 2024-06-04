@@ -83,7 +83,7 @@ lexer.write(tokenList, targetPath);    //	持久化解析出来的Token序列
 
 
 
-![编译原理](E:\IDEACreat\compile-course-homework\readme\编译原理.png)
+![编译原理](https://raw.githubusercontent.com/Ag-epiphany/typora_Pictures/main/编译原理.png)
 
 
 

@@ -40,10 +40,15 @@ public class SnlCompilerApplication {
         }
 
 //        参数校验之后，正式开始编译
+//        记录编译时间
+        long startTime = System.nanoTime();
+
         SnlCompiler snlCompiler = new SnlCompiler();
         snlCompiler.setCompiledResultPathDirectory(resultDirectory);
-//        todo 不同模式的config之后再补
-        snlCompiler.flipSyntaxer(new SyntaxerConfig());
-        snlCompiler.compile(src);
+        snlCompiler.compile(src, configNumber);
+
+        long endTime = System.nanoTime();
+        double durationSeconds = (endTime - startTime) / 1_000_000_000.0;
+        System.out.println("本次编译耗时：" + System.console().format("%.3f", durationSeconds));
     }
 }
