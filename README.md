@@ -78,3 +78,42 @@ lexer.write(tokenList, targetPath);    //	持久化解析出来的Token序列
 > 转换器。
 
 1. 持久化Token时，将自定义类型字段转换为.xlsx文件能识别的类型。
+
+### 2.2 LL1 语法分析
+
+
+
+![编译原理](E:\IDEACreat\compile-course-homework\readme\编译原理.png)
+
+
+
+#### 2.2.1 CFG
+
+> 上下文无关文法
+
+1. 上下文无关文法 静态地定义语法结构。
+
+#### 2.2.2 First Sets
+
+>给定符号 X ，First(X) 表示可以从 X 中推导出的所有 terminal 串中 leftmost terminal 的集合。
+
+1. First Sets 使用给定的文法求出。
+
+
+#### 2.2.3 Follow Sets
+
+>给定符号 X ，Follow(X) 表示可以从 Start Symbol S 推导出的所有串中，可能直接接在 X 之后的 terminal 的集合。
+
+1. Follow Sets 使用 CFG + First Sets 求出。 
+
+
+#### 2.2.4 Predictive Table
+
+>存储每一个当前最左端的 non-terminal 以及 lookahead 得到的 next input token 来选取唯一的 production
+
+1. 通过 Follow Sets + First Sets 求得
+
+
+
+
+

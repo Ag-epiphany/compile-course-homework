@@ -28,5 +28,6 @@ public class ProjectConstant {
     public static final String DEFAULT_SYNTAX_TREE_GRAPH_FILEPATH = "src\\main\\resources\\default\\" +
             "defaultSyntaxTreeGraph.txt";
 
-    public static final String DEFAULT_COMPILED_FILEPATH="C:\\Users\\19747\\Desktop";
+    public static final String DEFAULT_SYNTAX_GRAMMAR_FILEPATH = "/default/Grammar.txt";
+
 }

@@ -1,0 +1,108 @@
+Program
+│   └──ProgramHead
+│   │   └──PROGRAM
+│       └──ProgramName
+│       │   └──IDENTIFIER
+    └──DeclarePart
+    │   └──TypeDec
+    │   │   └──TypeDeclaration
+    │   │   │   └──TYPE
+    │   │       └──TypeDecList
+    │   │       │   └──TypeId
+    │   │       │   │   └──IDENTIFIER`
+    │   │           └──=
+    │   │           └──TypeName
+    │   │           │   └──BaseType
+    │   │           │   │   └──INTEGER
+    │   │           └──;
+    │   │           └──TypeDecMore
+    │   │           │   └──@
+        └──VarDec
+        │   └──VarDeclaration
+        │   │   └──VAR
+        │       └──VarDecList
+        │       │   └──TypeName`
+        │       │   │   └──IDENTIFIER`
+        │           └──VarIdList
+        │           │   └──IDENTIFIER`
+        │               └──VarIdMore
+        │               │   └──@`
+        │           └──;`
+        │           └──VarDecMore
+        │           │   └──VarDecList`
+        │           │   │   └──TypeName`
+        │           │   │   │   └──BaseType`
+        │           │   │   │   │   └──CHAR
+        │           │       └──VarIdList`
+        │           │       │   └──IDENTIFIER`
+        │           │           └──VarIdMore`
+        │           │           │   └──@`
+        │           │       └──;`
+        │           │       └──VarDecMore`
+        │           │       │   └──@`
+        └──ProcDec
+        │   └──@`
+    └──ProgramBody
+    │   └──BEGIN
+        └──StmList
+        │   └──Stm
+        │   │   └──InputStm
+        │   │   │   └──READ
+        │   │       └──(
+        │   │       └──Invar
+        │   │       │   └──IDENTIFIER`
+        │   │       └──)
+            └──StmMore
+            │   └──;`
+                └──StmList`
+                │   └──@`
+                    └──Stm`
+                    └──StmMore`
+                    └──Stm`
+                    │   └──OutputStm
+                    │   │   └──WRITE
+                    │       └──(`
+                    │       └──Exp`
+                    │       └──)`
+                        └──IDENTIFIER`
+                        └──AssCall
+                        │   └──AssignmentRest
+                        │   │   └──VariMore
+                        │   │   │   └──@`
+                        │       └──:=
+                        │       └──Exp
+                        │       │   └──Term
+                        │       │   │   └──Factor
+                        │       │   │   │   └──Variable
+                        │       │   │   │   │   └──IDENTIFIER`
+                        │       │   │   │       └──VariMore`
+                        │       │   │   │       │   └──@`
+                        │       │       └──OtherFactor
+                        │       │       │   └──@`
+                        │           └──OtherTerm
+                        │           │   └──AddOp
+                        │           │   │   └──+
+                        │               └──Exp`
+                        │               │   └──Term`
+                        │                   └──OtherTerm`
+                        │                   └──Term`
+                        │                   │   └──Factor`
+                        │                       └──OtherFactor`
+                        │                       └──Factor`
+                        │                       │   └──Variable`
+                        │                       │   │   └──IDENTIFIER`
+                        │                       │       └──VariMore`
+                        │                       │       │   └──@`
+                        │                           └──INTC
+                        │                       └──OtherFactor`
+                        │                       │   └──@`
+                        │                           └──@`
+                        │                   └──OtherTerm`
+                        │                   │   └──@`
+                        │                       └──@`
+                    └──StmMore`
+                    │   └──;`
+                        └──StmList`
+                        └──;`
+                        └──StmList`
+        └──END

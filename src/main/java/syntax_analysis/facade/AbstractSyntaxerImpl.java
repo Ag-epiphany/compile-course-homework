@@ -7,7 +7,7 @@ abstract public class AbstractSyntaxerImpl {
 
     abstract public void printSyntaxTreeText();             //  标准输出语法树
 
-    abstract public void printSyntaxTreeGraph();            //标准输出语法树
+    abstract public void printSyntaxTreeGraph();            //  标准输出语法树
 
     abstract public void writeTree(File targetFile);        //  持久化语法树
 
