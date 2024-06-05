@@ -3,7 +3,6 @@ package lexical_analysis.token;
 import com.alibaba.excel.annotation.write.style.ContentFontStyle;
 import constant.ProjectConstant;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.alibaba.excel.annotation.write.style.ContentStyle;
 import com.alibaba.excel.annotation.write.style.HeadFontStyle;
 import lexical_analysis.token.type.LexType;
 import lexical_analysis.util.io.LexTypeConverter;
@@ -11,8 +10,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.text.StringEscapeUtils;
-
-import java.awt.*;
 
 @Getter
 @Setter
@@ -48,6 +45,7 @@ public class Token {
             sb.append(s);
         }
         this.sem = sb.toString();
+
     }
 
     @Override
@@ -61,5 +59,9 @@ public class Token {
                 .append("语义：")
                 .append(sem)
                 .toString();
+    }
+
+    public LexType getLex() {
+        return lex;
     }
 }
