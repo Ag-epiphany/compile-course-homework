@@ -464,9 +464,10 @@ public class ll1 {
 
                 }
                 else{
-
-                    String error = "An error found in line " + inputStackLine.pop() + " need " + tokenStack.pop() + ".";
-                    return new LL1Error(error);
+                    int lineNumber = inputStackLine.pop(); // 获取错误发生的行号
+                    String need = tokenStack.pop(); // 获取需要的Token信息
+                    String error = "An error found in line " + lineNumber + " need " + need + ".";
+                    return new LL1Error(error, lineNumber); // 注意这里传递了行号
                 }
             }
 
